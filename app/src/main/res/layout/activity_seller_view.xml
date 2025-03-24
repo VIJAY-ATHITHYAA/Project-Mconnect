@@ -79,10 +79,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter your car details"
+                android:layout_marginBottom="16dp"
+                android:text="Enter your product Name"
                 android:textColor="#1B3358"
-                android:textSize="24sp"
-                android:layout_marginBottom="16dp"/>
+                android:textSize="24sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -94,87 +94,20 @@
                     android:id="@+id/etCarNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter car number"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:hint="product Name.." />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGetPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Get car price"
+                android:backgroundTint="#1B3358"
                 android:padding="12dp"
-                android:textAllCaps="false"
-                android:backgroundTint="#1B3358"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Start with brand"
-                android:textColor="#1B3358"
-                android:textSize="18sp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="16dp"/>
+                android:text="Give Some details"
+                android:textAllCaps="false" />
 
             <!-- Car Brand Grid -->
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="4"
-                android:rowCount="2"
-                android:alignmentMode="alignMargins"
-                android:useDefaultMargins="true">
-
-                <!-- Row 1 -->
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:padding="8dp"
-                    android:src="@drawable/brand_logo_placeholder"/>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:padding="8dp"
-                    android:src="@drawable/brand_logo_placeholder"/>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:padding="8dp"
-                    android:src="@drawable/brand_logo_placeholder"/>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:padding="8dp"
-                    android:src="@drawable/brand_logo_placeholder"/>
-
-                <!-- Row 2 -->
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:padding="8dp"
-                    android:src="@drawable/brand_logo_placeholder"/>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:padding="8dp"
-                    android:src="@drawable/brand_logo_placeholder"/>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:padding="8dp"
-                    android:src="@drawable/brand_logo_placeholder"/>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:padding="8dp"
-                    android:src="@drawable/brand_logo_placeholder"/>
-            </GridLayout>
         </LinearLayout>
 
         <!-- Bottom Navigation -->
