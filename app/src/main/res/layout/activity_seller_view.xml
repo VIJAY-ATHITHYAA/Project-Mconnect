@@ -38,22 +38,6 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnBuy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="Buy"
-                    android:textColor="@color/black"
-                    android:backgroundTint="#FFC107" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSell"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sell"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/white" />
             </LinearLayout>
 
             <TextView
@@ -61,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="16dp"
-                android:text="Take\nthe next step of\nyour life"
+                android:text="Wanna\nSell you Used Products.."
                 android:textColor="@color/white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
@@ -99,7 +83,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnGetPrice"
+                android:id="@+id/btnGiveDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#1B3358"

@@ -36,17 +36,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="List Your Car"
+                android:text="List Your Product"
                 android:textColor="@color/text_primary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- Title Input -->
+        <!-- Category Selection -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Car Title"
+            android:text="Product Category"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Select category"
+            app:boxStrokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:inputType="none"
+                android:padding="12dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Product Name Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
@@ -56,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Enter car title"
+            android:hint="Enter product name (e.g., Dell Laptop i5, 8GB RAM)"
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -64,9 +91,36 @@
                 android:id="@+id/etTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
                 android:inputType="text"
-                android:padding="12dp"/>
+                android:minHeight="48dp"
+                android:padding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Brand/Model Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand/Model"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilBrandModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Enter brand and model"
+            app:boxStrokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etBrandModel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="12dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Condition Selection -->
@@ -74,7 +128,7 @@
             android:id="@+id/tvConditionLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Car Condition"
+            android:text="Product Condition"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
@@ -83,7 +137,7 @@
             android:id="@+id/rgCondition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_marginBottom="16dp"
             android:background="@color/white"
             android:padding="8dp">
@@ -95,216 +149,105 @@
                 android:text="New"
                 android:minHeight="48dp"
                 android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:layout_marginEnd="32dp"/>
+                android:paddingEnd="8dp"/>
 
             <RadioButton
-                android:id="@+id/rbUsed"
+                android:id="@+id/rbLikeNew"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Used"
+                android:text="Like New"
+                android:minHeight="48dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbGood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Good"
+                android:minHeight="48dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbFair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fair"
+                android:minHeight="48dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbNeedsRepair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Needs Repair"
                 android:minHeight="48dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"/>
         </RadioGroup>
 
-        <!-- Year Input -->
+        <!-- Purchase Date -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Manufacturing Year"
+            android:text="Purchase Date (Optional)"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilYear"
+            android:id="@+id/tilPurchaseDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Enter manufacturing year"
+            android:hint="Select purchase date"
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etYear"
+                android:id="@+id/etPurchaseDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:minHeight="48dp"
+                android:padding="12dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Original Price -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Original Price (Optional)"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilOriginalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Enter original price"
+            app:boxStrokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:prefixText="₹">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOriginalPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:inputType="number"
-                android:maxLength="4"
                 android:padding="12dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Brand Selection -->
+        <!-- Selling Price -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Car Brand"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilBrand"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Select car brand"
-            app:boxStrokeWidth="1dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-            <AutoCompleteTextView
-                android:id="@+id/spinnerBrand"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:inputType="none"
-                android:padding="12dp"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Model Selection -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Car Model"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilModel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Select car model"
-            app:boxStrokeWidth="1dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-            <AutoCompleteTextView
-                android:id="@+id/spinnerModel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:inputType="none"
-                android:padding="12dp"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Features Section -->
-        <TextView
-            android:id="@+id/tvFeaturesLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Car Features"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"/>
-
-        <!-- Features Search -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilFeaturesSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Search features"
-            app:boxStrokeWidth="1dp"
-            app:startIconDrawable="@drawable/ic_search"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etFeaturesSearch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:inputType="text"
-                android:padding="12dp"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Features Grid -->
-        <GridLayout
-            android:id="@+id/gridFeatures"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:layout_marginBottom="16dp"
-            android:background="@color/white"
-            android:padding="8dp">
-
-            <CheckBox
-                android:id="@+id/cbAlarm"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Alarm System"
-                android:minHeight="48dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:layout_columnWeight="1"/>
-
-            <CheckBox
-                android:id="@+id/cbCruiseControl"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Cruise Control"
-                android:minHeight="48dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:layout_columnWeight="1"/>
-
-            <CheckBox
-                android:id="@+id/cbBluetooth"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Bluetooth"
-                android:minHeight="48dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:layout_columnWeight="1"/>
-
-            <CheckBox
-                android:id="@+id/cbParkingSensor"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Parking Sensor"
-                android:minHeight="48dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:layout_columnWeight="1"/>
-        </GridLayout>
-
-        <!-- Location Input -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Enter location"
-            app:boxStrokeWidth="1dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:startIconDrawable="@drawable/ic_location"
-            app:startIconTint="@color/text_primary">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etLocation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:inputType="text"
-                android:padding="12dp"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Price Input -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price"
+            android:text="Selling Price"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
@@ -314,7 +257,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Enter price"
+            android:hint="Enter selling price"
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:prefixText="₹">
@@ -326,13 +269,100 @@
                 android:minHeight="48dp"
                 android:inputType="number"
                 android:padding="12dp"/>
+
+            <CheckBox
+                android:id="@+id/cbNegotiable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price Negotiable"
+                android:layout_marginTop="8dp"/>
         </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Location Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pickup Location"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Select pickup location"
+            app:boxStrokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:startIconDrawable="@drawable/ic_location"
+            app:startIconTint="@color/text_primary">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinnerLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:inputType="none"
+                android:padding="12dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Product Images Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Images"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/llImageContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAddImage"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_add_photo"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Photo"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </HorizontalScrollView>
 
         <!-- Description Input -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description"
+            android:text="Product Description"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
@@ -342,7 +372,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:hint="Write description about your car"
+            android:hint="Describe your product (e.g., Used for one year, no scratches, fully functional)"
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
